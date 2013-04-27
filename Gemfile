@@ -17,6 +17,8 @@ group :assets do
   gem 'therubyracer', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 end
 
 gem 'jquery-rails'
@@ -83,3 +85,5 @@ gem 'oj'
 gem "settingslogic"
 
 gem 'sidekiq'
+
+gem 'active_decorator'

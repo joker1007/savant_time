@@ -37,6 +37,7 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_decorator (0.3.4)
     activemodel (4.0.0.beta1)
       activesupport (= 4.0.0.beta1)
       builder (~> 3.1.0)
@@ -53,6 +54,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.33)
     addressable (2.3.4)
+    anjlab-bootstrap-rails (2.3.1.1)
+      railties (>= 3.0)
+      sass (>= 3.2)
     arel (4.0.0)
     atomic (1.1.8)
     awesome_print (1.1.0)
@@ -289,6 +293,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_decorator
+  anjlab-bootstrap-rails (>= 2.3)
   awesome_print
   better_errors
   binding_of_caller

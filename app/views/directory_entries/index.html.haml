@@ -1,0 +1,22 @@
+%table.table
+  %thead
+    %tr
+      %th.target-check
+      %th.entry_name
+        name
+      %th.size
+        filesize
+      %th.action
+  %tbody
+    - if current_path.present?
+      %tr
+        %td.target-check
+        %td.entry_name= link_to "..", "/" + parent_path(current_path)
+        %td.size
+        %td.action
+
+    - @directory.entries.each do |entry|
+      - if @directory.archive_jobs[entry.fullpath]
+        = render "backuped_entry", entry: entry
+      - else
+        = render "entry", entry: entry
