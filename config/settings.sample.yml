@@ -1,0 +1,14 @@
+defaults: &default
+  aws_access_key_id: "AWS KEY"
+  aws_secret_access_key: "AWS SECRET KEY"
+  aws_region: "ap-northeast-1"
+  fog_directory: "dir"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
