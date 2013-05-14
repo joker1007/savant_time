@@ -4,15 +4,15 @@ module ApplicationHelper
     if parent.to_s == "."
       ""
     else
-      parent.to_s
+      URI.escape(parent.to_s)
     end
   end
 
   def child_path(path)
     if current_path.present?
-      "/#{current_path}/#{path}"
+      URI.escape("/#{current_path}/#{path}")
     else
-      "/#{path}"
+      URI.escape("/#{path}")
     end
   end
 end
