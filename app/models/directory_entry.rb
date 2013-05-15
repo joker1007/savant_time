@@ -24,6 +24,9 @@ class DirectoryEntry
       end
     end
 
+    dirs.sort_by!(&:name)
+    files.sort_by!(&:name)
+
     @archive_jobs = ArchiveJob.where(fullpath: files.map(&:fullpath)).group_by {|j| j.fullpath}
 
     @entries = dirs.concat(files)
