@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<%= link_to "Get Inventory", inventory_jobs_path, remote: true, method: :post, class: [:btn, "retrieve-inventory"] %>
 <%= yield %>
 
 </body>

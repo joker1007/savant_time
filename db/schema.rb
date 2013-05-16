@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130427065321) do
+ActiveRecord::Schema.define(version: 20130516132016) do
 
   create_table "archive_jobs", force: true do |t|
     t.string   "jid"
@@ -22,5 +22,11 @@ ActiveRecord::Schema.define(version: 20130427065321) do
   end
 
   add_index "archive_jobs", ["fullpath"], name: "index_archive_jobs_on_fullpath"
+
+  create_table "inventory_retrieval_jobs", force: true do |t|
+    t.string   "jid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
