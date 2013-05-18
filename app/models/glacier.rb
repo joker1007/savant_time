@@ -8,9 +8,14 @@ class Glacier
     ArchiveJob.create!(jid: archive.id, description: File.basename(@path), fullpath: @path)
   end
 
-  def inventory_retrieve
+  def retrieve_inventory
     job = vault.jobs.create(type: Fog::AWS::Glacier::Job::INVENTORY)
     InventoryRetrievalJob.create!(jid: job.id)
+  end
+
+  def retrieve_archive(aid)
+    job = vault.jobs.create(type: Fog::AWS::Glacier::Job::ARCHIVE, archive_id: aid)
+    ArchiveRetrievalJob.create(jid: job.id)
   end
 
   def glacier

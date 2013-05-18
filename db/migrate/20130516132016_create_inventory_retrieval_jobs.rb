@@ -5,5 +5,6 @@ class CreateInventoryRetrievalJobs < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :inventory_retrieval_jobs, :jid, unique: true
   end
 end

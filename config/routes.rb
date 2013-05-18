@@ -2,7 +2,13 @@ SavantTime::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :inventory_jobs, only: [:create]
+  match "notifications/callback" => "notifications#callback", via: [:get, :post]
+  resources :inventory_jobs, only: [:create] do
+    collection do
+      match "callback", via: [:get, :post]
+    end
+  end
+
   get '*path' => 'directory_entries#index'
   post '*path' => 'archive_jobs#create'
 

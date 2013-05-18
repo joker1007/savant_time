@@ -8,7 +8,7 @@ class InventoryRetrievalJob < ActiveRecord::Base
 
   def archive_list
     job.get_output.body["ArchiveList"].map do |attrs|
-      Archive.new(archive_id: attrs["ArchiveId"], description: attrs["ArchiveDescription"], created_at: attrs["CreationDate"], size: attrs["Size"], sha256: attrs["SHA256TreeHash"])
+      Archive.new(aid: attrs["ArchiveId"], description: URI.unescape(attrs["ArchiveDescription"]), filesize: attrs["Size"].to_s, sha256: attrs["SHA256TreeHash"])
     end
   end
 end
