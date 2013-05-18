@@ -5,4 +5,9 @@ class Archive < ActiveRecord::Base
   def filesize
     super.to_i
   end
+
+  def retrieve
+    glacier = Glacier.new
+    glacier.retrieve_archive(aid)
+  end
 end

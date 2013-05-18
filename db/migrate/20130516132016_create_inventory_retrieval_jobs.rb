@@ -1,7 +1,7 @@
 class CreateInventoryRetrievalJobs < ActiveRecord::Migration
   def change
     create_table :inventory_retrieval_jobs do |t|
-      t.string :jid
+      t.string :jid, null: false
 
       t.timestamps
     end

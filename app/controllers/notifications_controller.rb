@@ -3,6 +3,7 @@ class NotificationsController < ApplicationController
 
   def callback
     json = ActiveSupport::JSON.decode(request.body.read)
+    Rails.logger.info json.inspect
     Rails.logger.error "Message Not Found" unless json["Message"]
 
     message = ActiveSupport::JSON.decode(json["Message"])
