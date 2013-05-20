@@ -5,5 +5,7 @@
 $ ->
   $("a.backup").on "ajax:success", ->
     alert("バックアップジョブが開始されました")
-  $("a.retrieve-inventory").on "ajax:success", ->
+  $("a.js-retrieve-inventory").on "ajax:success", ->
     alert("インベントリ取得ジョブが開始されました")
+  $("a.js-retrieve-archive").on "ajax:success", ->
+    alert("アーカイブ取得ジョブが開始されました")

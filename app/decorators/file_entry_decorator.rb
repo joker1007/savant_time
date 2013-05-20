@@ -1,5 +1,9 @@
 # coding: utf-8
 module FileEntryDecorator
+  def check_box
+    check_box_tag("targets[]", fullpath)
+  end
+
   def entry_name
     name
   end
