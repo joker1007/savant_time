@@ -15,8 +15,8 @@ SavantTime::Application.routes.draw do
     end
   end
 
-  get '/entries/(*path)' => 'directory_entries#index', as: :entries
-  post '/entries/(*path)' => 'archive_jobs#create'
+  get '/entries/(*path)' => 'directory_entries#index', as: :entries, format: false
+  post '/entries/(*path)' => 'archive_jobs#create', format: false
 
   # You can have the root of your site routed with "root"
   root to: redirect("/entries/")
