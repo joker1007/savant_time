@@ -8,6 +8,7 @@ SavantTime::Application.routes.draw do
     end
   end
   resources :inventory_jobs, only: [:create]
+  resources :archive_retrieval_jobs, only: [:create]
 
   get '/entries/(*path)' => 'directory_entries#index', as: :entries
   post '/entries/(*path)' => 'archive_jobs#create'

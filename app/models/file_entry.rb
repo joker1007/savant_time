@@ -9,4 +9,8 @@ class FileEntry
     @pathname = Pathname.new(path)
     @size = FileTest.size(path)
   end
+
+  def archive_job_from_collection(collection)
+    collection[fullpath]
+  end
 end

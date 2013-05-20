@@ -1,0 +1,5 @@
+%tr
+  %td.target-check
+  %td.entry_name= entry.entry_name
+  %td.size= entry.size
+  %td.action アーカイブ済み #{entry.size.to_i == archive.filesize.to_i ? "(サイズ一致)" : "(サイズ不一致)"} &nbsp; #{archive.retrieve_link}

@@ -3,6 +3,9 @@ class DirectoryEntriesController < ApplicationController
     root_path = Pathname.new(Settings.root_dir)
     real_path = root_path + current_path
     @directory = DirectoryEntry.new(real_path.to_s)
-    @directory.entries
+    @archive_jobs = ArchiveJob.where(fullpath: @directory.entries.map(&:fullpath))
+    @loaded_archive_jobs = @archive_jobs.group_by {|j| j.fullpath}
+    @archives = Archive.where(aid: @archive_jobs.pluck(:jid))
+    @loaded_archives = @archives.group_by {|a| a.aid}
   end
 end
