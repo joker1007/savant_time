@@ -1,7 +1,7 @@
 # coding: utf-8
 module FileEntryDecorator
   def check_box
-    check_box_tag("targets[]", fullpath)
+    check_box_tag("targets[]", fullpath, false, class: ["js-archive-target"])
   end
 
   def entry_name

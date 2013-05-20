@@ -9,3 +9,7 @@ $ ->
     alert("インベントリ取得ジョブが開始されました")
   $("a.js-retrieve-archive").on "ajax:success", ->
     alert("アーカイブ取得ジョブが開始されました")
+  $(".js-all-check").click ->
+    $(".js-archive-target").attr("checked", "checked")
+  $(".js-all-uncheck").click ->
+    $(".js-archive-target").removeAttr("checked")
