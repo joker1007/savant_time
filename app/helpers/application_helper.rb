@@ -2,17 +2,17 @@ module ApplicationHelper
   def parent_path(path)
     parent = Pathname(path).parent
     if parent.to_s == "."
-      ""
+      entries_path
     else
-      URI.escape(parent.to_s)
+      entries_path(URI.escape(parent.to_s)[1..-1])
     end
   end
 
   def child_path(path)
     if current_path.present?
-      URI.escape("/#{current_path}/#{path}")
+      entries_path(URI.escape("/#{current_path}/#{path}")[1..-1])
     else
-      URI.escape("/#{path}")
+      entries_path(URI.escape("/#{path}")[1..-1])
     end
   end
 end

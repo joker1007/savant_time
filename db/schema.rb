@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20130518073429) do
   add_index "archives", ["aid"], name: "index_archives_on_aid", unique: true
 
   create_table "inventory_retrieval_jobs", force: true do |t|
-    t.string   "jid"
+    t.string   "jid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

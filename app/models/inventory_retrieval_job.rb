@@ -1,4 +1,6 @@
 class InventoryRetrievalJob < ActiveRecord::Base
+  validates :jid, presence: true
+
   def job
     return @job if @job
 

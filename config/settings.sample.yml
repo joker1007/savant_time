@@ -3,6 +3,9 @@ defaults: &default
   aws_secret_access_key: "AWS SECRET KEY"
   aws_region: "ap-northeast-1"
   fog_directory: "dir"
+  root_dir: "backup target directories root"
+  download_dir: <%= Rails.root + "downloads" %>
+  vault_name: "VAULT NAME"
 
 development:
   <<: *default

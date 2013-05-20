@@ -2,18 +2,18 @@ SavantTime::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  match "notifications/callback" => "notifications#callback", via: [:get, :post]
-  resources :inventory_jobs, only: [:create] do
+  resources :notifications, only: [] do
     collection do
       match "callback", via: [:get, :post]
     end
   end
+  resources :inventory_jobs, only: [:create]
 
-  get '*path' => 'directory_entries#index'
-  post '*path' => 'archive_jobs#create'
+  get '/entries/(*path)' => 'directory_entries#index', as: :entries
+  post '/entries/(*path)' => 'archive_jobs#create'
 
   # You can have the root of your site routed with "root"
-  root to: 'directory_entries#index'
+  root to: redirect("/entries/")
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
