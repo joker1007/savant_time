@@ -1,4 +1,4 @@
-= form_tag bulk_create_archive_jobs_path, remote: true do
+= form_tag bulk_create_archive_jobs_path, remote: true, id: "bulk-archive-form" do
   = link_to "Get Inventory", inventory_jobs_path, remote: true, method: :post, class: [:btn, "js-retrieve-inventory"]
   = submit_tag("Bulk Archive", class: [:btn])
   = button_tag("All Check", class: [:btn, "btn-primary", "js-all-check"])

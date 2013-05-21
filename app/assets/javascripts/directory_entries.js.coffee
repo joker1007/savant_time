@@ -5,6 +5,8 @@
 $ ->
   $("a.backup").on "ajax:success", ->
     alert("バックアップジョブが開始されました")
+  $("#bulk-archive-form").on "ajax:success", ->
+    alert("バックアップジョブが開始されました")
   $("a.js-retrieve-inventory").on "ajax:success", ->
     alert("インベントリ取得ジョブが開始されました")
   $("a.js-retrieve-archive").on "ajax:success", ->
