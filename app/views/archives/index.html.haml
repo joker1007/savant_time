@@ -1,4 +1,4 @@
-= paginate @archive_jobs
+= paginate @archives
 %table.table
   %thead
     %tr
@@ -10,6 +10,6 @@
       %th.action
       %th.destroy-action
   %tbody
-    - @archive_jobs.entries.each do |archive_job|
-      = render "archive", archive_job: archive_job, archive: archive_job.archive
-= paginate @archive_jobs
+    - @archives.each do |archive|
+      = render "archive", archive_job: archive.archive_job, archive: archive
+= paginate @archives

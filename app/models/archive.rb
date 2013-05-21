@@ -4,6 +4,8 @@ class Archive < ActiveRecord::Base
 
   after_destroy :destroy_remote
 
+  paginates_per 200
+
   # SQLiteでは8bit INTしか扱えず文字列として保持しているので、整数に変換してから返す
   def filesize
     super.to_i

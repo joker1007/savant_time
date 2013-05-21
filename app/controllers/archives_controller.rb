@@ -1,6 +1,6 @@
 class ArchivesController < ApplicationController
   def index
-    @archive_jobs = ArchiveJob.includes(:archive).order("fullpath ASC").page(params[:page])
+    @archives = Archive.joins(:archive_job).includes(:archive_job).order("archive_jobs.fullpath ASC").page(params[:page])
   end
 
   def destroy

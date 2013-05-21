@@ -1,6 +1,6 @@
 %tr
   %td.target-check
-  %td.entry_name= archive_job.fullpath
+  %td.entry_name= archive_job.try(:fullpath) || archive.description
   %td.size= archive.try(:filesize) || "インベントリ取得待ち"
   %td.action= archive.try(:retrieve_link) || "インベントリ取得待ち"
   %td.destroy-action= archive.try(:destroy_link) || "インベントリ取得待ち"
