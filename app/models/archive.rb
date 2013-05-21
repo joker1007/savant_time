@@ -2,7 +2,7 @@ class Archive < ActiveRecord::Base
   validates :aid, presence: true, uniqueness: true
   belongs_to :archive_job, foreign_key: :aid, primary_key: :jid, dependent: :destroy
 
-  before_destroy :destroy_remote
+  after_destroy :destroy_remote
 
   # SQLiteでは8bit INTしか扱えず文字列として保持しているので、整数に変換してから返す
   def filesize
