@@ -1,6 +1,6 @@
 class Archive < ActiveRecord::Base
   validates :aid, presence: true, uniqueness: true
-  belongs_to :archive_job, foreign_key: :aid, primary_key: :jid
+  belongs_to :archive_job, foreign_key: :aid, primary_key: :jid, dependent: :destroy
 
   before_destroy :destroy_remote
 

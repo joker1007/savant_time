@@ -8,6 +8,7 @@
       %th.size
         filesize
       %th.action
+      %th.destroy-action
   %tbody
     - @archive_jobs.entries.each do |archive_job|
       = render "archive", archive_job: archive_job, archive: archive_job.archive
