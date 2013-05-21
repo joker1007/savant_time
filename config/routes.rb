@@ -14,6 +14,7 @@ SavantTime::Application.routes.draw do
       post "bulk_create"
     end
   end
+  resources :archives, only: [:index]
 
   get '/entries/(*path)' => 'directory_entries#index', as: :entries, format: false
   post '/entries/(*path)' => 'archive_jobs#create', format: false

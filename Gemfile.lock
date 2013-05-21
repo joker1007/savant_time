@@ -153,6 +153,9 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.0)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -313,6 +316,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-turbolinks
+  kaminari
   launchy
   libnotify
   minitest
