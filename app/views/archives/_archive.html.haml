@@ -1,0 +1,5 @@
+%tr
+  %td.target-check
+  %td.entry_name= archive_job.fullpath
+  %td.size= archive.try(:filesize) || "インベントリ取得待ち"
+  %td.action= archive.try(:retrieve_link) || "インベントリ取得待ち"

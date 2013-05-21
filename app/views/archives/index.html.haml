@@ -1,0 +1,14 @@
+= paginate @archive_jobs
+%table.table
+  %thead
+    %tr
+      %th.target-check
+      %th.entry_name
+        fullpath
+      %th.size
+        filesize
+      %th.action
+  %tbody
+    - @archive_jobs.entries.each do |archive_job|
+      = render "archive", archive_job: archive_job, archive: archive_job.archive
+= paginate @archive_jobs

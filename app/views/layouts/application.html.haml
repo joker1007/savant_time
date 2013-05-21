@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title Savant Time
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container
+          .nav-collapse.collapse.navbar-inverse-collapse
+            %ul.nav
+              %li
+                = link_to "Home", entries_path
+              %li
+                = link_to "Archives", archives_path
+    = yield
