@@ -1,3 +1,4 @@
+= paginate @entries
 = form_tag bulk_create_archive_jobs_path, remote: true, id: "bulk-archive-form" do
   = link_to "Get Inventory", inventory_jobs_path, remote: true, method: :post, class: [:btn, "js-retrieve-inventory"]
   = submit_tag("Bulk Archive", class: [:btn])
@@ -20,7 +21,7 @@
           %td.size
           %td.action
 
-      - @directory.entries.each do |entry|
+      - @entries.each do |entry|
         - if archive_job = @loaded_archive_jobs[entry.fullpath]
           - if archive = @loaded_archives[archive_job.first.jid]
             = render "archived_entry", entry: entry, archive: archive.first
@@ -28,3 +29,4 @@
             = render "archive_jobed_entry", entry: entry
         - else
           = render "entry", entry: entry
+= paginate @entries

@@ -11,8 +11,8 @@ class DirectoryEntry
     @dir = Dir.open(path)
   end
 
-  def entries
-    return @entries if @entries
+  def entries(page, per_page = 500)
+    return Kaminari.paginate_array(@entries).page(page).per(per_page) if @entries
 
     dirs = []
     files = []
@@ -28,5 +28,6 @@ class DirectoryEntry
     files.sort_by!(&:name)
 
     @entries = dirs.concat(files)
+    Kaminari.paginate_array(@entries).page(page).per(per_page)
   end
 end
