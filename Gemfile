@@ -88,3 +88,5 @@ gem 'sidekiq'
 
 gem 'active_decorator'
 gem 'kaminari'
+
+gem 'treehash'

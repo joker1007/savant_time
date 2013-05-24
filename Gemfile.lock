@@ -272,6 +272,7 @@ GEM
       atomic
     tilt (1.4.1)
     timers (1.1.0)
+    treehash (0.0.2)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -337,6 +338,7 @@ DEPENDENCIES
   sqlite3
   tapp
   therubyracer
+  treehash
   turbolinks
   uglifier (>= 1.0.3)
   unicorn

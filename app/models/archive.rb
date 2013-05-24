@@ -16,6 +16,11 @@ class Archive < ActiveRecord::Base
     glacier.retrieve_archive(aid)
   end
 
+  def verify
+    return unless File.exists?(archive_job.fullpath)
+    sha256 == Treehash.calculate_tree_hash(File.open(archive_job.fullpath))
+  end
+
   private
   def destroy_remote
     glacier = Glacier.new
