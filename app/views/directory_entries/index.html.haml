@@ -1,9 +1,12 @@
 = paginate @entries
+
+#check-menu
+  = button_tag "All Check", class: %w(btn js-all-check)
+  = button_tag "Clear", type: "reset", class: %w(btn js-all-uncheck)
+  = link_to "Get Inventory", inventory_jobs_path, remote: true, method: :post, class: %w(btn js-retrieve-inventory)
+
 = form_tag bulk_create_archive_jobs_path, remote: true, id: "bulk-archive-form" do
-  = link_to "Get Inventory", inventory_jobs_path, remote: true, method: :post, class: [:btn, "js-retrieve-inventory"]
-  = submit_tag("Bulk Archive", class: [:btn])
-  = button_tag("All Check", class: [:btn, "btn-primary", "js-all-check"])
-  = button_tag("Clear", type: "reset", class: [:btn, "js-all-uncheck"])
+  = submit_tag("Bulk Archive", class: %w(btn btn-primary))
   %table.table
     %thead
       %tr
