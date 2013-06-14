@@ -1,6 +1,6 @@
 worker_processes 2
 preload_app true
-timeout 30
+timeout 300
 listen 3456, :tcp_nopush => true
 
 stderr_path "log/unicorn.stderr.log"
