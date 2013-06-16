@@ -6,6 +6,8 @@ defaults: &default
   root_dir: "backup target directories root"
   download_dir: <%= Rails.root + "downloads" %>
   vault_name: "VAULT NAME"
+  login_user: "USER NAME"
+  login_password: "PASSWORD"
 
 development:
   <<: *default
