@@ -6,7 +6,7 @@ class Glacier
   def archive_create
     return nil if ArchiveJob.exists?(fullpath: @path)
 
-    archive = vault.archives.create body: File.open(@path), description: File.basename(@path), :multipart_chunk_size => 1024*1024
+    archive = vault.archives.create body: File.open(@path), description: File.basename(@path), :multipart_chunk_size => 1024*1024*4
     ArchiveJob.create!(jid: archive.id, description: File.basename(@path), fullpath: @path)
   end
 
