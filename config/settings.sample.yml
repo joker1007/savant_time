@@ -5,6 +5,7 @@ defaults: &default
   fog_directory: "dir"
   root_dir: "backup target directories root"
   download_dir: <%= Rails.root + "downloads" %>
+  upload_chunk_size: 8 # MB
   vault_name: "VAULT NAME"
   login_user: "USER NAME"
   login_password: "PASSWORD"

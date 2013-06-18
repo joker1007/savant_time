@@ -1,5 +1,5 @@
 class InventoryJobsController < ApplicationController
-  protect_from_forgery except: [:callback]
+  before_action :digest_authenticate
 
   def create
     glacier = Glacier.new(nil)
