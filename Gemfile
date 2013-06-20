@@ -78,7 +78,7 @@ group :test do
   gem "database_cleaner", github: "bmabey/database_cleaner"
 end
 
-gem 'fog'
+gem 'fog', '>= 1.12'
 gem 'pry-rails'
 gem "factory_girl_rails"
 gem 'oj'
