@@ -78,7 +78,7 @@ end
 
 gem 'fog', '>= 1.12'
 gem 'pry-rails'
-gem 'debugger2', github: 'ko1/debugger2'
+gem 'byebug'
 gem "factory_girl_rails"
 gem 'oj'
 gem "settingslogic"
