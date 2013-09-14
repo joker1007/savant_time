@@ -45,16 +45,11 @@ RSpec.configure do |config|
 
   # If you use database_cleaner, comment out following line.
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
+    DatabaseRewinder.clean_all
   end
 
   config.after(:each) do
-    DatabaseCleaner.clean
+    DatabaseRewinder.clean
   end
 
   # for Delorean

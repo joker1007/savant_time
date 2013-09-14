@@ -73,7 +73,7 @@ end
 
 group :test do
   gem "delorean"
-  gem "database_cleaner", github: "bmabey/database_cleaner"
+  gem "database_rewinder"
 end
 
 gem 'fog', '>= 1.12'
