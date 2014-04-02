@@ -1,25 +1,20 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.0.rc2'
 
 gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
-  gem 'zurui-sass-rails'
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'bootstrap-sass'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-
-  gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
-end
+gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 
@@ -37,12 +32,6 @@ gem "haml-rails"
 # Use unicorn as the app server
 gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano', group: :development
-
-# To use debugger
-# gem 'debugger'
-#
 group :development do
   gem "rails3-generators", :git => "git://github.com/indirect/rails3-generators.git", :group => [:development]
   gem "i18n_generators"
@@ -54,7 +43,8 @@ end
 group :development, :test do
   gem "rspec", "~> 2.11"
   gem "rspec-rails", "~> 2.11"
-  gem "spring", github: "jonleighton/spring"
+  gem "spring"
+  gem 'spring-commands-rspec'
 
   gem "capybara"
   gem "poltergeist"
