@@ -9,6 +9,6 @@ module FileEntryDecorator
   end
 
   def action
-    link_to "Backup", child_path(name), remote: true, method: :post, class: [:btn, :backup]
+    link_to "Backup", child_path(name), remote: true, method: :post, class: %w(btn btn-default backup)
   end
 end
