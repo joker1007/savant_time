@@ -33,6 +33,11 @@ gem "haml-rails"
 gem 'unicorn'
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+
   gem "rails3-generators", :git => "git://github.com/indirect/rails3-generators.git", :group => [:development]
   gem "i18n_generators"
 

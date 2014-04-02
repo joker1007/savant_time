@@ -39,3 +39,5 @@ runner.html
 tags
 
 bundle_bin
+
+config/deploy/*.rb
