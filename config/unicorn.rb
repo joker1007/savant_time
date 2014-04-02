@@ -1,7 +1,9 @@
 worker_processes 2
-preload_app true
 timeout 300
-listen 3456, :tcp_nopush => true
+
+listen "/tmp/.savant_time.sock"
+
+pid File.expand_path('../../tmp/pids/unicorn.pid', __FILE__)
 
 stderr_path "log/unicorn.stderr.log"
 stdout_path "log/unicorn.stdout.log"
@@ -18,12 +20,12 @@ before_fork do |server, worker|
   #
   # Using this method we get 0 downtime deploys.
 
-  old_pid = Rails.root + 'tmp/pids/unicorn.pid.oldbin'
-  if File.exists?(old_pid) && server.pid != old_pid
+  old_pid = "#{server.config[:pid]}.oldbin"
+  if old_pid != server.pid
     begin
-      Process.kill("QUIT", File.read(old_pid).to_i)
+      sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+      Process.kill(sig, File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH
-      # someone else did our job for us
     end
   end
 end
